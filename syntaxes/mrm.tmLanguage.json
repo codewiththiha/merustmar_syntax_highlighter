@@ -1,0 +1,47 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Merustmar",
+  "patterns": [
+    { "include": "#keywords" },
+    { "include": "#strings" },
+    { "include": "#numbers" },
+    { "include": "#builtins" }
+  ],
+  "repository": {
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.control.mrm",
+          "match": "\\b(တကယ်လို့|မဟုတ်ရင်|ဒါယူ|ပတ်|ခါပတ်)\\b"
+        },
+        {
+          "name": "keyword.declaration.mrm",
+          "match": "\\b(ထား|ဖန်ရှင်|လို့ထား)\\b"
+        },
+        {
+          "name": "constant.language.boolean.mrm",
+          "match": "\\b(မှန်|မှား)\\b"
+        }
+      ]
+    },
+    "builtins": {
+      "patterns": [{
+        "name": "support.function.mrm",
+        "match": "\\b(len|first|last|rest|push|ရေး|terminal_init|terminal_end|clear|terminal_size|print_at|print_at_center|draw_border|flush|read_key|poll_key|sleep|rand|now_ms)\\b"
+      }]
+    },
+    "strings": {
+      "name": "string.quoted.double.mrm",
+      "begin": "\"",
+      "end": "\"",
+      "patterns": [{ "name": "constant.character.escape.mrm", "match": "\\\\." }]
+    },
+    "numbers": {
+      "patterns": [
+        { "name": "constant.numeric.float.mrm", "match": "\\b\\d+\\.\\d+\\b" },
+        { "name": "constant.numeric.integer.mrm", "match": "\\b\\d+\\b" }
+      ]
+    }
+  },
+  "scopeName": "source.mrm"
+}
