@@ -1,8 +1,11 @@
 {
   "name": "merustmar",
   "displayName": "Merustmar",
-  "description": "",
+  "publisher": "codewiththiha",
+  "icon": "icon.png",
+  "description": "Merustmar programming language syntax highlighting",
   "version": "0.0.1",
+  "repository" : "https://github.com/codewiththiha/merustmar_syntax_highlighter.git",
   "engines": {
     "vscode": "^1.115.0"
   },
