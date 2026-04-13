@@ -5,7 +5,8 @@
     { "include": "#keywords" },
     { "include": "#strings" },
     { "include": "#numbers" },
-    { "include": "#builtins" }
+    { "include": "#builtins" },
+    { "include": "#punctuation" }
   ],
   "repository": {
     "keywords": {
@@ -27,7 +28,7 @@
     "builtins": {
       "patterns": [{
         "name": "support.function.mrm",
-        "match": "\\b(len|first|last|rest|push|ရေး|terminal_init|terminal_end|clear|terminal_size|print_at|print_at_center|draw_border|flush|read_key|poll_key|sleep|rand|now_ms)\\b"
+        "match": "\\b(len|first|last|rest|push|ရေး|terminal_init|terminal_end|clear|terminal_size|print_at|print_at_center|draw_border|flush|read_key|poll_key|sleep|rand|now_ms|input|is_string|is_int|is_double|to_integer|to_double)\\b"
       }]
     },
     "strings": {
@@ -39,7 +40,16 @@
     "numbers": {
       "patterns": [
         { "name": "constant.numeric.float.mrm", "match": "\\b\\d+\\.\\d+\\b" },
-        { "name": "constant.numeric.integer.mrm", "match": "\\b\\d+\\b" }
+        { "name": "constant.numeric.integer.mrm", "match": "\\b\\d+\\b" },
+        { "name": "constant.numeric.integer.myanmar.mrm", "match": "[၀-၉]+" }
+      ]
+    },
+    "punctuation": {
+      "patterns": [
+        {
+          "name": "punctuation.terminator.mrm",
+          "match": "။"
+        }
       ]
     }
   },
