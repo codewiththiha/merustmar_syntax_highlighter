@@ -1,7 +1,9 @@
 {
   "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
   "name": "Merustmar",
+  "scopeName": "source.mrm",
   "patterns": [
+    { "include": "#comments" },
     { "include": "#keywords" },
     { "include": "#strings" },
     { "include": "#numbers" },
@@ -9,6 +11,23 @@
     { "include": "#punctuation" }
   ],
   "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.line.double-slash.mrm",
+          "match": "//.*$"
+        },
+        {
+          "name": "comment.line.number-sign.mrm",
+          "match": "#.*$"
+        },
+        {
+          "name": "comment.block.mrm",
+          "begin": "/\\*",
+          "end": "\\*/"
+        }
+      ]
+    },
     "keywords": {
       "patterns": [
         {
@@ -46,12 +65,8 @@
     },
     "punctuation": {
       "patterns": [
-        {
-          "name": "punctuation.terminator.mrm",
-          "match": "။"
-        }
+        { "name": "punctuation.terminator.mrm", "match": "။" }
       ]
     }
-  },
-  "scopeName": "source.mrm"
+  }
 }
